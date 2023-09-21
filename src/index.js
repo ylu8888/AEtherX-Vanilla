@@ -8,6 +8,7 @@ window.onload = function() {
             const input = document.querySelector('#search-bar').value;
 
             if(input == ''){
+                console.log("Empty input");
                 alert("Please enter a valid search"); //if the user enters nothing into search
                 return;
             }
