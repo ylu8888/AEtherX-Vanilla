@@ -1,5 +1,17 @@
 import Model from './model.js';
 
 window.onload = function() {
-  // fill me with relevant code
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.search-form').onsubmit = (event) => {
+            event.preventDefault(); // prevent page from refreshing on form submission
+
+            const input = document.querySelector('#search-bar').value;
+
+            if(input == ''){
+                alert("Please enter a valid search"); //if the user enters nothing into search
+                return;
+            }
+        }
+
+    });
 };
