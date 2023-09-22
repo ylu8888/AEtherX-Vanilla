@@ -6,6 +6,7 @@
 </head>
 <body>
   <div id="header" class="header">
+
      <h1 id="title"> Fake Stack Overflow</h1>
 
    <div class="search-box">
@@ -21,19 +22,21 @@
 
     <div class="menu">
        <nav id="menu-nav">
-         <a>Questions</a>
+         <a href="#" id="question-nav">Questions</a>
          <a>Tags</a>
        </nav>
     </div>
 
-     <div class="questions-box">
+     <div class="questions-box" style = "display:block">
       
         <div class="questions-info">
-          <h1>All Questions</h1>
+          <h1 id = "questions_header">All Questions</h1>
 
-          <button id="ask-btn">Ask Question</button>
+          <a href="#"> <!-- redirect to Ask question page-->
+            <button id="ask-btn">Ask Question</button>
+          </a>
+
         </div>
-
       
         <div class="questions-nav">
          <h3 id="num-questions"> # questions</h3>
@@ -56,12 +59,38 @@
         -->
 
        
-       
+        
     </div>
 
-    
-    
-    
+    <div class = "question-form" style = "display:none">
+
+      <form class="question-box-form"action="">
+        <h2 class="question-heading">Question Title*</h2>
+        <h4 class="question-require">Limit title to 100 characters or less</h4>
+        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Write Question Title" required></textarea>
+
+        <h2 class="question-heading">Question Text*</h2>
+        <h4 class="question-require">Add Details</h4>
+        <textarea class="question-text" name="" id="" cols="80" rows="7" placeholder="Write Question" required></textarea>
+
+        <h2 class="question-heading">Tags*</h2>
+        <h4 class="question-require">Add keywords separated by whitespace</h4>
+        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Write Tags" required></textarea>
+
+        <h2 class="question-heading">Username*</h2>
+        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Your Username" required></textarea>
+        <br>
+        <br>
+        <input type="submit" name="" value="Post Question" id="send-btn">
+        <h4 id = "required-field-header" style = "display:inline">*indicates mandatory fields</h4>
+
+      </form>
+
+    </div>
+
+
   </div>
+
+
 </body>
 </html>
