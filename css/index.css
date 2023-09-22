@@ -3,6 +3,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: Times New Roman;
+    overflow-x: hidden;
 }
 
 .header{
@@ -60,8 +61,23 @@ body{
 }
 
 #menu-nav a{
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-top: 23px;
     margin-bottom: 23px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#menu-nav a:visited {
+    color: inherit; /*inherits the parent color when visited link*/
+}
+
+#menu-nav a:hover{
+    background-color: lightgray;
+    cursor: pointer;
 }
 
 .questions-box{
@@ -89,6 +105,10 @@ body{
     margin-right: 50px;
     font-size: 16px;
     
+}
+
+#ask-btn:hover {
+    cursor: pointer;
 }
 
 .questions-nav{
@@ -122,3 +142,116 @@ body{
 #questions-sort a:last-child{
     margin-right: -5px;
 }
+
+/* THE START OF THE QUESTIONS FORM CSS */
+
+.question-form{
+    flex: 1;
+   
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#send-btn {
+    padding: 5px;
+    background-color: rgb(35, 144, 246);
+    color: #fff;
+    width: 150px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#send-btn:hover {
+    cursor: pointer;
+}
+
+/* .question-heading{
+   
+} */
+
+.question-require{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.question-box-form{
+    width: 800px;
+  
+}
+
+.question-text{
+    font-size: 14px;
+}
+
+/* THE END OF THE QUESTIONS FORM CSS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+
+@media (max-width: 1380px) {
+    #title{
+        font-size: 35px;
+        margin-left: 550px;
+    }
+
+}
+
+@media (max-width: 1290px) {
+    #title{
+        font-size: 30px;
+        margin-left: 500px;
+    }
+}
+
+@media (max-width: 1240px) {
+    #title{
+        font-size: 28px;
+        margin-left: 340px;
+    }
+}
+
+@media (max-width: 950px) {
+    #title{
+        font-size: 24px;
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 680px) {
+    #title{
+        font-size: 20px;
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 470px) {
+    #title{
+        font-size: 14px;
+        margin-left: 80px;
+    }
+}
+
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+/* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
