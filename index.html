@@ -22,8 +22,8 @@
 
     <div class="menu">
        <nav id="menu-nav">
-         <a href="#" id="question-nav">Questions</a>
-         <a>Tags</a>
+         <a href = '' id="question-nav">Questions</a>
+         <a href = '#' id = "tag-nav">Tags</a>
        </nav>
     </div>
 
@@ -48,15 +48,14 @@
          </nav>
        </div>
 
-       <!-- 
+       <!-- QUESTIONS TO BE DISPLAYED -->
 
        <div class="questions-list">
          <ul>
-           <li>Question</li>
-           <li>Question</li>
+          
          </ul>
        </div>
-        -->
+       
 
        
         
@@ -67,18 +66,18 @@
       <form class="question-box-form"action="">
         <h2 class="question-heading">Question Title*</h2>
         <h4 class="question-require">Limit title to 100 characters or less</h4>
-        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Write Question Title" required></textarea>
+        <textarea class="question-text" name="" id="q-title" cols="80" rows="2" placeholder="Write Question Title" required></textarea>
 
         <h2 class="question-heading">Question Text*</h2>
         <h4 class="question-require">Add Details</h4>
-        <textarea class="question-text" name="" id="" cols="80" rows="7" placeholder="Write Question" required></textarea>
+        <textarea class="question-text" name="" id="q-description" cols="80" rows="7" placeholder="Write Question" required></textarea>
 
         <h2 class="question-heading">Tags*</h2>
         <h4 class="question-require">Add keywords separated by whitespace</h4>
-        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Write Tags" required></textarea>
+        <textarea class="question-text" name="" id="q-tags" cols="80" rows="2" placeholder="Write Tags" required></textarea>
 
         <h2 class="question-heading">Username*</h2>
-        <textarea class="question-text" name="" id="" cols="80" rows="2" placeholder="Your Username" required></textarea>
+        <textarea class="question-text" name="" id="q-username" cols="80" rows="2" placeholder="Your Username" required></textarea>
         <br>
         <br>
         <input type="submit" name="" value="Post Question" id="send-btn">
@@ -90,7 +89,6 @@
 
 
   </div>
-
 
 </body>
 </html>
