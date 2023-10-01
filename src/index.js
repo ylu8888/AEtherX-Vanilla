@@ -104,8 +104,7 @@ window.onload = function() {
         //DISPLAYING THE SEARCH RESULTS IN HTML
 
         function displaySearch(resultsArray){
-
-            const questList = document.getElementById("questions-display");
+            document.querySelector('#num-questions').innerHTML = `${resultsArray.length} questions`;
 
             while(questList.firstChild != null){
                 questList.removeChild(questList.firstChild); //remove every list item from question list
@@ -125,6 +124,8 @@ window.onload = function() {
 
                 questList.appendChild(questItem);
             })
+
+            
             
         }
 
@@ -149,7 +150,27 @@ window.onload = function() {
 
         //ADD QUESTION FORM
         document.querySelector('.question-form').onsubmit = (event) => {
-
+            
+            //we have to delete every list item from questions List
+            while(questList.firstChild != null){
+                questList.removeChild(questList.firstChild); //remove every list item from question list
+            }
+            //and then re-add it because of how the search functionality is implemented
+            newQuestion.data.questions.forEach(question => {
+                const questItem = document.createElement('li'); //create a new list item for every question
+        
+                questItem.innerHTML = `
+                 <h2> ${question.title}</h2>
+                 <p> ${question.tagsId} </p>
+                 <p class = "asker"> ${question.askedBy} </p>
+                 <p> ${question.askDate}</p>
+                 <p class = "q-view-data"> ${question.views}</p>
+                 <p class = "q-view-data"> ${question.ansIds}</p>
+                `;
+        
+                questList.appendChild(questItem);
+            })
+            
             if (document.getElementById('q-title').value.length > 100) {
                 event.preventDefault();
                 return;
@@ -199,6 +220,9 @@ window.onload = function() {
         `;
 
         questList.appendChild(questItem); //add the list item onto question list
+
+        document.querySelector('#num-questions').innerHTML = `${newQuestion.data.questions.length} questions`;
+        document.getElementById('questions_header').innerHTML = "All Questions";
 
             //get rid of the form after u submit and return to questions page
             document.querySelector('.question-form').style.display = 'none';
