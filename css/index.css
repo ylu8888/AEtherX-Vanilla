@@ -43,10 +43,8 @@ body{
 }
 
 .main{
-    height: 100vh; 
     display: flex;
     flex: 1;
-
 }
 
 .menu{
@@ -91,8 +89,6 @@ body{
     flex: 1;
     display: flex;
     flex-direction: column;
-   
-    
 }
 
 .questions-info{
@@ -123,7 +119,6 @@ body{
     justify-content: space-between;
     border-bottom: 1.5px rgb(87, 83, 83) dashed;
     margin-left: 0;
-
 }
 
 #num-questions{
@@ -141,9 +136,27 @@ body{
     padding: 5px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: -5px;
- 
-    
+    margin-right: -5px;   
+}
+
+#questions-display {
+    list-style-type: none;
+    padding: 0px;
+    margin:0px;
+}
+
+#questions-display li {
+    border-top: 1px gray dashed;
+    border-bottom: 1px gray dashed;
+    padding: 20px;
+}
+
+#questions-display li h2 {
+    color: blue;
+}
+
+p.asker {
+    color: crimson;
 }
 
 #questions-sort a:last-child{
