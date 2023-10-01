@@ -5,19 +5,18 @@ window.onload = function() {
     var newQuestion = new Model(); //making a new instance of model class so we can access properties
 
     //DISPLAYING THE QUESTIONS IN HTML
-    const questList = document.querySelector(".questions-list");
+    const questList = document.getElementById("questions-display");
 
     newQuestion.data.questions.forEach(question => {
         const questItem = document.createElement('li'); //create a new list item for every question
 
         questItem.innerHTML = `
-         <h1> ${question.title}</h1>
-         <p> ${question.text} </p>
+         <h2> ${question.title}</h2>
          <p> ${question.tagsId} </p>
-         <p> ${question.askedBy} </p>
+         <p class = "asker"> ${question.askedBy} </p>
          <p> ${question.askDate}</p>
-         <p> ${question.views}</p>
-         <p> ${question.ansIds}</p>
+         <p class = "q-view-data"> ${question.views}</p>
+         <p class = "q-view-data"> ${question.ansIds}</p>
         `;
 
         questList.appendChild(questItem);
@@ -102,20 +101,21 @@ window.onload = function() {
             const questItem = document.createElement('li'); //create a new list item for every question
 
         questItem.innerHTML = `
-         <h1> ${qObj.title}</h1>
-         <p> ${qObj.text} </p>
+         <h2> ${qObj.title}</h2>
          <p> ${qObj.tagsId} </p>
-         <p> ${qObj.askedBy} </p>
+         <p class = "asker"> ${qObj.askedBy} </p>
          <p> ${qObj.askDate}</p>
-         <p> ${qObj.views}</p>
-         <p> ${qObj.ansIds}</p>
+         <p class = "q-view-data"> ${qObj.views}</p>
+         <p class = "q-view-data"> ${qObj.ansIds}</p>
         `;
 
-        questList.appendChild(questItem);
+        questList.appendChild(questItem); //add the list item onto question list
 
             //get rid of the form after u submit and return to questions page
             document.querySelector('.question-form').style.display = 'none';
             document.querySelector('.questions-box').style.display = 'block';
+
+            document.querySelector('#num-questions').innerHTML = `${newQuestion.data.questions.length} questions`;
 
         };
 };
