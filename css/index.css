@@ -139,19 +139,19 @@ body{
     margin-right: -5px;   
 }
 
-#questions-display {
+.questDisplay {
     list-style-type: none;
     padding: 0px;
     margin:0px;
 }
 
-#questions-display li {
+.questDisplay li {
     border-top: 1px gray dashed;
     border-bottom: 1px gray dashed;
     padding: 20px;
 }
 
-#questions-display li h2 {
+.questDisplay li h2 {
     color: blue;
 }
 
