@@ -24,20 +24,52 @@ window.onload = function() {
     
     //Showing the number of questions that are asked
     document.querySelector('#num-questions').innerHTML = `${newQuestion.data.questions.length} questions`;
-    
+
+        //SEARCH BAR FORM
         document.querySelector('.search-form').onsubmit = (event) => {
             event.preventDefault(); // prevent page from refreshing on form submission
 
             document.getElementById('questions_header').innerHTML = "Search Results";
 
-            let input = document.querySelector('#search-bar').value;
+            var input = document.querySelector('#search-bar').value;
+            
 
             if (input == '') {
                 console.log('Input field is empty!'); //if the user enters nothing into search
                 return;
             }
-
+            
+            document.querySelector('#search-bar').value = '';
             console.log(input);
+            searchQuestion(input, newQuestion.data.questions);
+           
+            
+        }
+
+        //SEARCHING FOR A QUESTION
+        function searchQuestion(inputString, questionArray){
+            var search = inputString.toLowerCase(); 
+            search = search.split(' '); //split each word in input String by whitespace 
+            
+            var resultsArray = []; //this is the questions array we will display as results
+
+            for(let i = 0; i < questionArray.length; i++){ //iterate through question array
+                var questionWords = questionArray[i].title.split(' '); //splits the words of the question title
+
+                for(let j = 0; j < search.length; j++){ //iterate through input strings words
+                    for(let k = 0; k < questionWords.length; k++){ //iterate through question title words
+                        if(search[j] == questionWords[k].toLowerCase()){ // at least 1 word matches
+                            resultsArray.push(questionArray[i]); //add it to the questions results we WANT to show to user
+                            console.log(resultsArray);
+                            break; 
+                            
+                
+                        }
+                    }
+                }
+            }
+            //displaySearch(resultsArray); 
+            
         }
 
         document.querySelector('#ask-btn').onclick = () => {
@@ -59,6 +91,7 @@ window.onload = function() {
 
         //we will make it so when the form is submitted, a new question is actually created as an object
 
+        //ADD QUESTION FORM
         document.querySelector('.question-form').onsubmit = (event) => {
 
             if (document.getElementById('q-title').value.length > 100) {
