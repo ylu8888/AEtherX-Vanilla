@@ -52,23 +52,79 @@ window.onload = function() {
             search = search.split(' '); //split each word in input String by whitespace 
             
             var resultsArray = []; //this is the questions array we will display as results
+            var uniqueResults = []; //need this b/c for some reasont theres duplicates
 
+            //CHECKING THROUGH THE QUESTION TITLE WORDS
             for(let i = 0; i < questionArray.length; i++){ //iterate through question array
                 var questionWords = questionArray[i].title.split(' '); //splits the words of the question title
 
                 for(let j = 0; j < search.length; j++){ //iterate through input strings words
                     for(let k = 0; k < questionWords.length; k++){ //iterate through question title words
-                        if(search[j] == questionWords[k].toLowerCase()){ // at least 1 word matches
+                        if(questionWords[k].toLowerCase().includes(search[j])){ // at least 1 word matches
+                            //we have to use include instead of == for substrings
                             resultsArray.push(questionArray[i]); //add it to the questions results we WANT to show to user
+                            console.log('search success! Found a question');
                             console.log(resultsArray);
                             break; 
                             
-                
                         }
                     }
                 }
             }
-            //displaySearch(resultsArray); 
+
+            //CHECKING THROUGH THE QUESTION TEXT WORDS
+            for(let i = 0; i < questionArray.length; i++){ //iterate through question array
+                var questionWords = questionArray[i].text.split(' '); //splits the words of the question text
+
+                for(let j = 0; j < search.length; j++){ //iterate through input strings words
+                    for(let k = 0; k < questionWords.length; k++){ //iterate through question text words
+                        if(questionWords[k].toLowerCase().includes(search[j])){ // at least 1 word matches
+                            //we have to use include instead of == for substrings
+                            resultsArray.push(questionArray[i]); //add it to the questions results we WANT to show to user
+                            console.log('search success! Found a question');
+                            console.log(resultsArray);
+                            break; 
+                            
+                        }
+                    }
+                }
+            }
+
+            
+            for(let i = 0; i < resultsArray.length; i++){
+                if(!uniqueResults.includes(resultsArray[i])){
+                    uniqueResults.push(resultsArray[i]); //only include unique results 
+                }
+            }
+
+            displaySearch(uniqueResults); 
+            
+        }
+
+        //DISPLAYING THE SEARCH RESULTS IN HTML
+
+        function displaySearch(resultsArray){
+
+            const questList = document.getElementById("questions-display");
+
+            while(questList.firstChild != null){
+                questList.removeChild(questList.firstChild); //remove every list item from question list
+            }
+
+            resultsArray.forEach(question => {
+                const questItem = document.createElement('li'); //create a new list item for every question
+
+                questItem.innerHTML = `
+                <h2> ${question.title}</h2>
+                <p> ${question.tagsId} </p>
+                <p class = "asker"> ${question.askedBy} </p>
+                <p> ${question.askDate}</p>
+                <p class = "q-view-data"> ${question.views}</p>
+                <p class = "q-view-data"> ${question.ansIds}</p>
+                `;
+
+                questList.appendChild(questItem);
+            })
             
         }
 
