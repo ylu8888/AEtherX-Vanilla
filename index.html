@@ -22,7 +22,7 @@
 
     <div class="menu">
        <nav id="menu-nav">
-         <a href = '' id="question-nav">Questions</a>
+         <a href= '#' id="question-nav">Questions</a>
          <a href = '#' id = "tag-nav">Tags</a>
        </nav>
     </div>
@@ -33,7 +33,7 @@
           <h1 id = "questions_header">All Questions</h1>
 
           <a href="#"> <!-- redirect to Ask question page-->
-            <button id="ask-btn">Ask Question</button>
+            <button class="ask-btn">Ask Question</button>
           </a>
 
         </div>
@@ -42,11 +42,18 @@
          <h3 id="num-questions"> # questions</h3>
 
          <nav id="questions-sort">
-           <a>Newest</a>
-           <a>Active</a>
-           <a>Unanswered</a>
+           <button id = "newest-button" class = "sort-buttons">Newest</button>
+           <button id = "active-button" class = "sort-buttons">Active</button>
+           <button id = "unanswered-button" class = "sort-buttons">Unanswered</button>
          </nav>
        </div>
+
+       <!-- IF NO RESULTS ARE FOUND -->
+
+       <div class="noresults" style="display: none">
+        <br>
+        <h2>No Questions Found</h2>
+      </div>
 
        <!-- QUESTIONS TO BE DISPLAYED -->
 
@@ -55,23 +62,21 @@
          </ul>
        </div>
 
-       <div class="search-display">
+       <!-- <div class="search-display">
         <ul class="questDisplay">          
         </ul>
-      </div>
+      </div> -->
 
-       
-
-       
-        
     </div>
 
+    <!-- DISPLAYING THE QUESTION FORM -->
     <div class = "question-form" style = "display:none">
 
       <form class="question-box-form"action="">
         <h2 class="question-heading">Question Title*</h2>
         <h4 class="question-require">Limit title to 100 characters or less</h4>
         <textarea class="question-text" name="" id="q-title" cols="80" rows="2" placeholder="Write Question Title" required></textarea>
+        <span class="error-message" style="display: none;">Enter a title with 100 characters or less</span>
 
         <h2 class="question-heading">Question Text*</h2>
         <h4 class="question-require">Add Details</h4>
@@ -80,6 +85,8 @@
         <h2 class="question-heading">Tags*</h2>
         <h4 class="question-require">Add keywords separated by whitespace</h4>
         <textarea class="question-text" name="" id="q-tags" cols="80" rows="2" placeholder="Write Tags" required></textarea>
+        <span id="tag-error" class="error-message" style="display: none;">Enter a tag with 10 characters or less</span>
+        <span id="max-tags" class="error-message" style="display: none;">Enter 5 or less tags</span>
 
         <h2 class="question-heading">Username*</h2>
         <textarea class="question-text" name="" id="q-username" cols="80" rows="2" placeholder="Your Username" required></textarea>
@@ -92,8 +99,80 @@
 
     </div>
 
+    <!-- FOR DISPLAY QUESTION DETAILS -->
+  
+      <div class="question-details" style="display: none">
+        <div class="quest-column">
+          <h3 id="num-answers"># answers</h3>
+          <h3 id="question-title">Programatically navigate using react router </h3>
 
-  </div>
+          <a href="#"> <!-- redirect to Ask question page-->
+            <button class="ask-btn ask-btn2">Ask Question</button>
+          </a>
+        </div>
+
+        <div class="quest-column" id="quest-column2">
+          <h3 id="num-views"># views</h3>
+          <p id="quest-text">the alert shows the proper index for the li clicked, and when I alert the variable within the last function I\'m calling, moveToNextImage(stepClicked), the same value shows but the animation isn\'t happening. This works many other ways, but I\'m trying to pass the index value of the list item clicked to use for the math to calculate.</p>
+
+            <div class="user-date">
+              <p id="quest-user">The guy who asked</p>
+              <p id="quest-date">The date asked</p>
+            </div>
+        </div>
+
+        <!-- THIS IS FOR THE LIST OF ANSWERS BELOW THE QUESTION DETAILS -->
+        <div class="answers-display">
+          <ul class="answers-list">          
+          </ul>
+        </div>
+
+        <a href="#"> <!-- redirect to Ask question page-->
+          <button class="ans-btn">Answer Question</button>
+        </a>
+
+      </div>
+
+      <div class="answer-form-div" >
+        <form class="answer-form" style="display: none">
+          <h2 class="answer-username-head">Username*</h2>
+          <textarea class="answer-username" name="" id="q-title" cols="80" rows="2" placeholder="Write Username" required></textarea>
+
+          <h2 class="answer-text-head">Answer Text*</h2>
+          <textarea class="answer-text" name="" id="q-title" cols="80" rows="12" placeholder="Write Answer" required></textarea>
+
+          <br>
+
+          <button id="post-ans-btn">Post Answer</button>
+          <h4 id = "required-field-header" style = "display:inline; margin-left: 60px;">*indicates mandatory fields</h4>
+
+        </form>
+      </div>
+
+
+      <div class="tag-page" style= "display: none">
+         <div class="top-col">
+          <h1 id="num-tags"> # Tags</h1>
+          <h1 id="all-tags"> All Tags</h1>
+  
+          <a href="#"> <!-- redirect to Ask question page-->
+            <button class="ask-btn">Ask Question</button>
+          </a>
+         </div>
+
+         <br>
+         <div class="tags-box">
+          <ul class="tags-list">
+             
+          </ul>
+
+         </div>
+
+      </div>
+
+
+   </div>
+   
 
 </body>
 </html>
