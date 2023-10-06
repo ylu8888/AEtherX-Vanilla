@@ -19,6 +19,15 @@ body{
     
 }
 
+.sort-buttons {
+    padding: 5px;
+    background-color: white;
+}
+
+.sort-buttons:hover {
+    cursor:pointer;
+}
+
 #title{
     font-size: 40px;
     align-items:center;
@@ -80,10 +89,9 @@ body{
     background-color: lightgray;
 }
 
-/* #menu-nav a:visited {
-    color: inherit; 
-} */
-
+.questTit:hover {
+    text-decoration: underline;
+}
 
 .questions-box{
     flex: 1;
@@ -97,7 +105,7 @@ body{
     padding-left: 30px;
 }
 
-#ask-btn{
+.ask-btn{
     width: 130px;
     height: 40px;
     background-color: rgb(35, 144, 246);
@@ -110,7 +118,15 @@ body{
     
 }
 
-#ask-btn:hover {
+.noresults{
+    display: flex;
+    flex-direction: column;
+    display: block;
+    margin-left: 30px;
+   
+}
+
+.ask-btn:hover {
     cursor: pointer;
 }
 
@@ -146,13 +162,33 @@ body{
 }
 
 .questDisplay li {
+
     border-top: 1px gray dashed;
     border-bottom: 1px gray dashed;
     padding: 20px;
+  
 }
 
-.questDisplay li h2 {
+.question-list-elements {
+    display: flex;
+}
+
+.questDisplay li h3 {
     color: blue;
+    cursor: pointer;
+}
+
+.view-heading {
+    text-align: center;
+    padding: 5px;
+}
+
+.view-time {
+    padding: 5px;
+}
+
+.view-data {
+    padding: 5px;
 }
 
 p.asker {
@@ -210,31 +246,170 @@ p.asker {
     font-size: 14px;
 }
 
+.error-message{
+    font-size: 18px;
+    color: red;
+}
+
 /* THE END OF THE QUESTIONS FORM CSS */
 
+/* THE START OF QUESTION DETAILS CSS */
+
+.question-details{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.quest-column{
+    display: flex;
+    margin: 25px;
+    /* justify-content: space-between; */
+   
+}
+
+#quest-column2{
+    border-bottom: 1.5px rgb(87, 83, 83) dashed;
+  
+}
+
+.quest-column > * {
+    margin-right: 50px;
+    margin-left: 45px;
+}
+
+#quest-text{
+    width: 45%;
+}
+
+#quest-user{
+    color: red;
+}
+
+.user-date{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.ask-btn2{
+    width: 130px;
+    height: 40px;
+    background-color: rgb(35, 144, 246);
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+.ans-btn{
+    width: 130px;
+    height: 40px;
+    background-color: rgb(35, 144, 246);
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+#post-ans-btn{
+    width: 130px;
+    height: 40px;
+    background-color: rgb(35, 144, 246);
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+}
 
 
+/* THE END OF QUESTION DETAILS CSS */
+
+/* START OF ANSWER FORM CSS */
+
+.answer-form-div{
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.answers-list li{
+    border-bottom: 1.5px rgb(87, 83, 83) dashed;
+}
+
+/* END OF ANSWER FORM CSS */
 
 
+ /* START OF TAGS PAGE CSS */
+
+ .tag-page{
+    flex: 1;
+ }
+ .top-col{
+    display: flex;
+    margin-top: 20px;
+ }
+
+ .top-col > * {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.tags-list{
+    list-style-type: none;
+}
+
+.tags-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+   
+    display: inline; /*turns list item from block to inline elemnts */
+    
+}
+
+.tags-list li {
+    display: inline-block; /*turns list item from block to inline elemnts */
+    padding: 15px;
+    border: 2px rgb(87, 83, 83) dashed;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 50px;
+    margin-top: 10px;
+  
+    font-size: 18px;
+   
+}
 
 
+ /* END OF TAGS PAGE CSS */
 
-
-
-
-
-
-
-
+ 
 
 /* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
 /* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
 /* PLEASE LEAVE THIS MEDIA AT THE BOTTOM AND WRITE CSS CODE ABOVE IT*/
+@media (max-width: 1440px) {
+
+    .tags-list li {
+        width: 175px;
+    }
+
+}
 
 @media (max-width: 1380px) {
     #title{
         font-size: 35px;
         margin-left: 550px;
+    }
+    .tags-list li {
+        width: 150px;
     }
 
 }
